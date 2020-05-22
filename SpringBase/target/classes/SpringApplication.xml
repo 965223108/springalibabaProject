@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+       <!--引入其他资源文件
+          资源的位置都是相对位置，相对于<import>标签所在的文件位置
+        -->
+       <import resource="SpringApplicationExtr.xml"></import>
+       <!--需要容器管理的对象,也可以使用名称空间-->
+       <bean id="workService" class="springbase.ioc.service.WorkService">
+           <!--描述对象之间的依赖关系-->
+           <property name="workDao" ref="workdao"></property>
+       </bean>
+
+
+</beans>
